@@ -1,0 +1,74 @@
+body {
+    font-family: 'Roboto', serif;
+}
+.header {
+    background-color: #373e98;
+    height: 4em;
+    display: flex;
+    padding: 1em;
+    color: white;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.blue-background {
+    background-color: #373e98;
+    color: white;
+}
+
+.orange-background {
+    background-color: #fee36e;
+    color: #373e98;
+}
+
+.flex-centered {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.button {
+    text-decoration: none;
+    background-color: #fee36e;
+    color: #373e98;
+    border-radius: 6px;
+    padding: 1em 1.5em;
+    font-weight: bold;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+.button:active {
+    transform: scale(1);
+}
+
+.player-container {
+    display: block;
+}
+.player-dropdown {
+    position: absolute;
+    padding: 1em;
+    
+    display: none;
+    flex-direction: column;
+    z-index: 1;
+}
+/* .player-dropdown::before {
+    border-bottom: 15px solid #000;
+    display: block;
+    width: 15px;
+    height: 15px;
+    box-sizing: border-box;
+    left: 15px;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    content: '';
+    position: absolute;
+    top: -15px;
+} */
+
+#player1-button {
+    position: relative;
+}
+
