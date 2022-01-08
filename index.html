@@ -45,17 +45,26 @@
     </div>
 
     <div id="game-board-container">
-       
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div class="row">
+            <div data-row="0" data-column='0' class="game-square"></div>
+            <div data-row="0" data-column='1' class="game-square"></div>
+            <div data-row="0" data-column='2' class="game-square"></div>
+        </div> 
+        
+        <div class="row">
+            <div data-row="1" data-column="0" class="game-square"></div>
+            <div data-row="1" data-column="1" class="game-square"></div>
+            <div data-row="1" data-column="2" class="game-square"></div>
+        </div>
+
+        <div class="row">
+            <div data-row="2" data-column="0" class="game-square"></div>
+            <div data-row="2" data-column="1" class="game-square"></div>
+            <div data-row="2" data-column="2" class="game-square"></div>
+        </div>
     </div>
+
+    <button id="board-reset-button" class="button ">reset</button>
 
     <script src="script.js"></script>
 </body>
