@@ -1,10 +1,13 @@
 const gameSquares = document.querySelectorAll('.game-square');
 const player1Button = document.getElementById('player1-button')
+const player2Button = document.getElementById('player2-button')
 const player1Form = document.getElementById('player1-form')
+const player2Form = document.getElementById('player2-form')
 const gameResetButton = document.getElementById('board-reset-button');
 const winnerBannerResetButton = document.getElementById('winner-reset-button')
 const winnerBanner = document.getElementById('winner-popup');
 const winnerMessage = document.getElementById('winner-message')
+const formForPlayer1 = document.forms['player1-form']
 
 const clickEvents = (function(){
 
@@ -13,10 +16,47 @@ const clickEvents = (function(){
         player1Form.style.display = 'flex';
     })
 
+    player2Button.addEventListener('click', (clickEvent) => {
+        player2Form.style.display = 'flex';
+    })
+
     winnerBannerResetButton.addEventListener('click', () => {
         winnerBanner.style.display = 'none';
         gameInfo.gameSetup();
 
+    })
+
+    player1Form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let name = ''
+        let player1NameValue = player1Form['player1Name'].value
+        if (player1NameValue == '') {
+            name = 'Player1'
+        }
+        else {
+            name = player1NameValue;
+        }
+         player1Button.innerText = name;
+
+         player1Form.style.display = 'none';
+
+    })
+
+    
+    player2Form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let name = ''
+        let player2NameValue = player2Form['player2Name'].value
+        if (player2NameValue == '') {
+            name = 'Player2'
+        }
+        else {
+            name = player2NameValue;
+        }
+         player2Button.innerText = name;
+
+         player2Form.style.display = 'none';
+         
     })
 
 

@@ -8,7 +8,7 @@ body {
     padding: 1em;
     color: white;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .blue-background {
@@ -53,6 +53,10 @@ body {
     display: none;
     flex-direction: column;
     z-index: 1;
+}
+
+#player2-form {
+    right: 1em;
 }
 
 
@@ -103,3 +107,9 @@ body {
     right: 0;
     bottom: 50%;
 }
+
+.icon-score-group {
+    display: flex;
+    justify-content: space-between;
+}
+

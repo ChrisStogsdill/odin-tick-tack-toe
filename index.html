@@ -13,33 +13,57 @@
     <div class="header">
         <div class="player-container flex-centered">
             
+            <div class="form-outer-container">
                 <div id="player1-button" class="player1-name-button button">
                     Choose Name
                 </div>
                 
-                <form id="player1-form" class="blue-background player-dropdown">
-                    <label for="player1-name">Player 1 Name</label>
-                    <input type="text" name="player1-name" id="player1-name-text-field">
+                <form id="player1-form" name='player1-form' class="blue-background player-dropdown">
+                    <label for="player1Name">Player 1 Name</label>
+                    <input type="text" name="player1Name" id="player1-name-text-field">
                     <input type="submit" value="submit">   
                     <input type="reset">                   
                 </form>
+            </div>
             
 
+            <div class="icon-score-group">
             
-            <div class="player1-icon">
+            <div id="player1-icon">
                 icon: x
             </div>
 
+   
         </div>
+
+        </div>
+       
         
         <h1 class="title"> Tic Tac Toe</h1>
         <div class="player-container flex-centered">
-            <div class="player2-name button">
-                Choose Name
+            
+            <div class="form-outer-container">
+                <div id="player2-button" class="player1-name-button button">
+                    Choose Name
+                </div>
+                
+                <form id="player2-form" name='player2-form' class="blue-background player-dropdown">
+                    <label for="player2Name">Player 2 Name</label>
+                    <input type="text" name="player2Name" id="player2-name-text-field">
+                    <input type="submit" value="submit">   
+                    <input type="reset">                   
+                </form>
             </div>
-            <div class="player1-icon">
+            
+
+            <div class="icon-score-group">
+            
+            <div id="player2-icon">
                 icon: o
             </div>
+
+     
+        </div>
 
         </div>
     </div>
