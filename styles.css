@@ -90,3 +90,16 @@ body {
     display: flex;
     margin: 1em auto;
 }
+
+#winner-popup {
+    display: none;
+    text-align: center;
+    color: #fee36e;
+    padding: 3em;
+    background-color: #373e98;
+    position: absolute;
+    margin-left: auto;
+    left: 0;
+    right: 0;
+    bottom: 50%;
+}

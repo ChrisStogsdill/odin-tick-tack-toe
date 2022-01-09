@@ -2,6 +2,9 @@ const gameSquares = document.querySelectorAll('.game-square');
 const player1Button = document.getElementById('player1-button')
 const player1Form = document.getElementById('player1-form')
 const gameResetButton = document.getElementById('board-reset-button');
+const winnerBannerResetButton = document.getElementById('winner-reset-button')
+const winnerBanner = document.getElementById('winner-popup');
+const winnerMessage = document.getElementById('winner-message')
 
 const clickEvents = (function(){
 
@@ -10,6 +13,11 @@ const clickEvents = (function(){
         player1Form.style.display = 'flex';
     })
 
+    winnerBannerResetButton.addEventListener('click', () => {
+        winnerBanner.style.display = 'none';
+        gameInfo.gameSetup();
+
+    })
 
 
     function setSquareClickEvents(){
@@ -21,6 +29,7 @@ const clickEvents = (function(){
                     //clickEvent.target.innerText = gameInfo.currentTurn();
                     gameInfo.updateGameBoard(targetRow, targetColumn, gameInfo.currentTurn())
                     populateBoard.draw();
+                    checkWinCondition.checkWin();
                     gameInfo.updatePlayerTurn()
                     
                 }
@@ -121,8 +130,37 @@ const populateBoard = (function(){
 const checkWinCondition = (function(){
     function checkWin(){
         let board = gameInfo.currentGameBoard();
-        
+        let turn = gameInfo.currentTurn();
+        let flatBoard = gameInfo.currentGameBoard().flat();
+       for (let i = 0; i < board.length; i++){
+            if (board[i].every((element) => element == gameInfo.currentTurn())){
+                displayWinMessage();
+            }
+            if (board[0][i] == turn && board[1][i] == turn && board[2][i] == turn){
+                displayWinMessage();
+            }
+            if (board[0][0] == turn && board[1][1] == turn && board[2][2] == turn){
+                displayWinMessage();
+            }
+            if (board[2][0] == turn && board[1][1] == turn && board[0][2] == turn){
+                displayWinMessage();
+            }
+            if(gameInfo.currentGameBoard().flat().every(x => x== 'o' || x == 'x')){
+                displayTieMessage();
+            }
+        }
     }
+    function displayWinMessage() {
+        winnerBanner.style.display = 'block';
+        winnerMessage.innerText = `${gameInfo.currentTurn()} is the winner!`;
+    }
+
+    function displayTieMessage(){
+        winnerBanner.style.display = 'block';
+        winnerMessage.innerText = `TIE game!`;
+    }
+    return {checkWin}
 }());
 
 gameInfo.gameSetup();
+
